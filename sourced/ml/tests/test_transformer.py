@@ -24,12 +24,10 @@ class TransformerTest(unittest.TestCase):
         self.pipeline_linear = self.transformers_linear[0]
         for transformer in self.transformers_linear[1:]:
             self.pipeline_linear = self.pipeline_linear.link(transformer)
-        """
-        Tree structure:
-        0 - 2 --- 5 - 6
-         \   \ \
-          1   3 4
-        """
+        # Tree structure:
+        # 0 - 2 --- 5 - 6
+        #  \   \ \
+        #   1   3 4
         self.transformers_tree = [DumpTransformer(i) for i in range(7)]
         self.pipeline_tree = self.transformers_tree[0] \
             .link(self.transformers_tree[2]) \
