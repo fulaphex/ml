@@ -38,8 +38,8 @@ matrix:
       env: *_coverage
       install: *_install
     - python: 3.6
-      env: SCRIPT="pycodestyle --max-line-length=99 --ignore E252,E121,E123,E126,E226,E24,E704,W503,W504 ."
-      install: pip install pycodestyle
+      env: SCRIPT="flake8 --max-line-length=99 ."
+      install: pip install flake8
     - python: 3.6
       env: *_coverage
       install: *_install
